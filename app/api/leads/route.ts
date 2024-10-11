@@ -3,7 +3,16 @@ import {NextResponse} from "next/server";
 
 export const GET: NextApiHandler = () => {
   return NextResponse.json({
-    items: ['Mikasa', 'Levi'],
+    items: [
+      {
+        id: 1,
+        name: 'Mikasa',
+      },
+      {
+        id: 2,
+        name: 'Levi',
+      }
+    ],
   })
 }
 
