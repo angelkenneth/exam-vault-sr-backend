@@ -3,7 +3,7 @@
 ## Project Initialization
 
 ```bash
-pnpm create next-app . --typescript --eslint --tailwind --no-src-dir --app --import-alias "@/*"
+pnpm create next-app . --typescript --eslint --no-tailwind --no-src-dir --app --import-alias "@/*"
 ```
 
 ## References
