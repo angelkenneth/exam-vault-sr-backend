@@ -1,7 +1,7 @@
-import {NextApiHandler} from "next";
 import {NextResponse} from "next/server";
+import {AppRouteHandlerFn} from "next/dist/server/future/route-modules/app-route/module";
 
-export const GET: NextApiHandler = () => {
+export const GET: AppRouteHandlerFn = () => {
   return NextResponse.json({
     items: [
       {
@@ -16,7 +16,7 @@ export const GET: NextApiHandler = () => {
   })
 }
 
-export const POST: NextApiHandler = () => {
+export const POST: AppRouteHandlerFn = () => {
   return NextResponse.json({
     id: 1,
     name: 'Mikasa',
