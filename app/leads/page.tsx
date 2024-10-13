@@ -1,20 +1,14 @@
 "use client";
 import Link from 'next/link'
 import {useEffect, useState} from "react";
-import {ListResponse} from "@/app/lib/api";
 import {Lead} from "@/app/api/leads/_local/lead";
-
-const getLeadList = async () => {
-  return fetch('http://localhost:3000/api/leads', {
-    method: 'GET',
-  }).then(r => r.json() as Promise<ListResponse<Lead>>)
-}
+import {getNetworkLeadList} from "@/app/api/leads/_network/list";
 
 export default function ListLead() {
   const [leadList, setLeadList] = useState<Lead[] | null>(null);
 
   useEffect(() => {
-    getLeadList().then(lead => setLeadList(lead.items))
+    getNetworkLeadList().then(lead => setLeadList(lead.items))
   }, []);
 
   if (!leadList) {
