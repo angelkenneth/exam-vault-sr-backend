@@ -15,9 +15,13 @@ export default function CreateNewLead() {
     <>
       <h1>New Lead</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Name</label>
-        <input type="text" {...register("name", {required: true})} />
-        <button type="submit">Submit</button>
+        <div>
+          <label>Name</label>
+          <input type="text" {...register("name", {required: true})} />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </>
   )

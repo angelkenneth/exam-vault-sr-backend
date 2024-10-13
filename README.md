@@ -1,5 +1,33 @@
 # NextJS GraphQL
 
+## Prerequisites
+
+1. [pnpm](https://pnpm.io/installation)
+
+## Setup
+
+### TLDR
+
+```bash
+pnpm install && \
+pnpm exec drizzle-kit migrate
+```
+
+### Steps
+
+1. `cd` into the root directory
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Set up the SQLite3 database and its schemas:
+
+   ```bash
+   pnpm exec drizzle-kit migrate
+   ```
+
 ## Project Initialization
 
 ```bash
@@ -14,3 +42,5 @@ pnpm create next-app . --typescript --eslint --no-tailwind --src-dir --app --imp
 4. [Fetching with Next.js 14 — Course part 15](https://www.youtube.com/watch?v=uR67O6sNjbg)
 5. [How to Build Forms in React](https://www.freecodecamp.org/news/how-to-build-forms-in-react/)
 6. [Guide to app architecture](https://developer.android.com/topic/architecture)
+7. [How to connect Next.js to a database (in 5 minutes)](https://www.youtube.com/watch?v=wTGaoB8EL-4)
+8. [Get Started with Drizzle and SQLite](https://orm.drizzle.team/docs/get-started/sqlite-new)
