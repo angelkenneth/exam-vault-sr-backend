@@ -18,6 +18,7 @@ export const GET: NextApiHandler = () => {
 
 export const POST: NextApiHandler = () => {
   return NextResponse.json({
-    done: true,
+    id: 1,
+    name: 'Mikasa',
   }, {status: 201})
 }
