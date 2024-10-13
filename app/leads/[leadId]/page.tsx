@@ -1,6 +1,6 @@
 "use client";
 import {useEffect, useState} from "react";
-import {Lead} from "@/app/lib/leads";
+import {Lead} from "@/app/api/leads/_local/lead";
 
 const getLeadById = async (leadId: string) => {
   return fetch(`http://localhost:3000/api/leads/${leadId}`, {

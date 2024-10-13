@@ -13,3 +13,4 @@ pnpm create next-app . --typescript --eslint --no-tailwind --no-src-dir --app --
 3. [Pages with Next.js 14 — Course part 4](https://www.youtube.com/watch?v=JViNLW_m7uU)
 4. [Fetching with Next.js 14 — Course part 15](https://www.youtube.com/watch?v=uR67O6sNjbg)
 5. [How to Build Forms in React](https://www.freecodecamp.org/news/how-to-build-forms-in-react/)
+6. [Guide to app architecture](https://developer.android.com/topic/architecture)

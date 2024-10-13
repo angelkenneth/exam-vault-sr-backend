@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import {useEffect, useState} from "react";
 import {ListResponse} from "@/app/lib/api";
-import {Lead} from "@/app/lib/leads";
+import {Lead} from "@/app/api/leads/_local/lead";
 
 const getLeadList = async () => {
   return fetch('http://localhost:3000/api/leads', {

@@ -1,9 +1,10 @@
 "use client";
 import {useForm} from "react-hook-form";
-import {CreatableLead, Lead} from "@/app/lib/leads";
+import {Lead} from "@/app/api/leads/_local/lead";
 import {useRouter} from 'next/navigation'
+import {PostLead} from "@/app/api/leads/_network/post";
 
-const createLead = async (body: CreatableLead) => {
+const createLead = async (body: PostLead) => {
   return fetch(`http://localhost:3000/api/leads`, {
     method: 'POST',
     body: JSON.stringify(body),
@@ -14,7 +15,7 @@ const createLead = async (body: CreatableLead) => {
 }
 
 export default function CreateNewLead() {
-  const {register, handleSubmit} = useForm<CreatableLead>();
+  const {register, handleSubmit} = useForm<PostLead>();
   const router = useRouter()
   const onSubmit = (data: Lead) =>
     createLead(data)
