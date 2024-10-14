@@ -46,3 +46,4 @@ pnpm create next-app . --typescript --eslint --no-tailwind --src-dir --app --imp
 8. [Get Started with Drizzle and SQLite](https://orm.drizzle.team/docs/get-started/sqlite-new)
 9. [Forms and Mutations > Form validation](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations#form-validation)
 10. [Setting up Vitest with Next.js](https://nextjs.org/docs/app/building-your-application/testing/vitest)
+11. [Building a NextJS backend with GraphQL and MongoDB](https://medium.com/womenintechnology/building-a-nextjs-backend-with-graphql-and-mongodb-fa6ca1307478 )

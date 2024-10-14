@@ -13,7 +13,8 @@ export const GET: AppRouteHandlerFn = async () => {
 }
 
 export const POST: AppRouteHandlerFn = async (req) => {
-  const {error, data} = postLeadSchema.safeParse(await req.json());
+  const input = await req.json();
+  const {error, data} = postLeadSchema.safeParse(input);
   if (error) {
     return NextResponse.json(error.errors, {status: 400})
   }
