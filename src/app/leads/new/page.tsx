@@ -20,6 +20,12 @@ export default function CreateNewLead() {
         }
       });
   };
+  const fieldErrorEl = (fieldName: string) => {
+    const zodError = error.find(e => e.path[0] === fieldName)
+    if (zodError) {
+      return <div>({zodError.message})</div>
+    }
+  }
 
   return (
     <>
@@ -28,15 +34,17 @@ export default function CreateNewLead() {
         <div>
           <label>Name</label>
           <input type="text" {...register("name", {required: true})} />
+          {fieldErrorEl("name")}
         </div>
         <div>
+          <label>Age</label>
+          <input type="number" {...register("age", {required: true})} />
+          {fieldErrorEl("age")}
+        </div>
+        <div>
+          <br/>
           <button type="submit">Submit</button>
         </div>
-        {(() => {
-          if (error.length) {
-            return <pre>{JSON.stringify(error, null, 2)}</pre>
-          }
-        })()}
       </form>
     </>
   )
