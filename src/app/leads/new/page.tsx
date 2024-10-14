@@ -1,15 +1,25 @@
 "use client";
 import {useForm} from "react-hook-form";
-import {Lead} from "@/app/api/leads/_local/lead";
 import {useRouter} from 'next/navigation'
 import {createNetworkLead, PostLead} from "@/app/api/leads/_network/post";
+import {useState} from "react";
+import type {ZodIssue} from "zod";
 
 export default function CreateNewLead() {
   const {register, handleSubmit} = useForm<PostLead>();
+  const [error, setError] = useState<ZodIssue[]>([])
   const router = useRouter()
-  const onSubmit = (data: Lead) =>
-    createNetworkLead(data)
-      .then((lead) => router.push(`/leads/${lead.id}`));
+  const onSubmit = (data: PostLead) => {
+    setError([])
+    return createNetworkLead(data)
+      .then(({success, json}) => {
+        if (success) {
+          router.push(`/leads/${json.id}`);
+        } else {
+          setError(json)
+        }
+      });
+  };
 
   return (
     <>
@@ -22,6 +32,11 @@ export default function CreateNewLead() {
         <div>
           <button type="submit">Submit</button>
         </div>
+        {(() => {
+          if (error.length) {
+            return <pre>{JSON.stringify(error, null, 2)}</pre>
+          }
+        })()}
       </form>
     </>
   )

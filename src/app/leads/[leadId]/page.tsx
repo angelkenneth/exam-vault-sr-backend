@@ -17,7 +17,7 @@ export default function LeadId({params}: { params: { leadId: string } }) {
   return (
     <>
       <h1>This is {leadId}!</h1>
-      <pre>{JSON.stringify(lead)}</pre>
+      <pre>{JSON.stringify(lead, null, 2)}</pre>
     </>
   )
 }
