@@ -10,9 +10,7 @@ export const createNetworkLead = async (body: PostLead): Promise<NetworkReturn<L
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(async (r) => {
-    return {
-      success: r.status === 201,
-      json: await r.json(),
-    }
-  })
+  }).then(async (r) => ({
+    success: r.status < 300,
+    json: await r.json(),
+  }))
