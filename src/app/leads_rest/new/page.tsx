@@ -14,7 +14,7 @@ export default function CreateNewLead() {
     return createNetworkLead(data)
       .then(({success, json}) => {
         if (success) {
-          router.push(`/leads/${json.id}`);
+          router.push(`/leads_rest/${json.id}`);
         } else {
           setError(json)
         }

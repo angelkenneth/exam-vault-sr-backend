@@ -4,7 +4,7 @@ export default function Home() {
       <h1>A K Tolentino (004)</h1>
       <ul>
         <li>
-          <a href="/leads">Leads</a>
+          <a href="/leads_rest">Leads (REST)</a>
         </li>
       </ul>
     </>

@@ -18,12 +18,12 @@ export default function ListLead() {
     <>
       <h1>List of Lead</h1>
       <p>
-        <Link href="/leads/new">Create</Link>
+        <Link href="/leads_rest/new">Create</Link>
       </p>
       <ul>
         {leadList.map((lead) => (
           <li key={lead.id}>
-            <Link href={`/leads/${lead.id}`}>{lead.name}</Link>
+            <Link href={`/leads_rest/${lead.id}`}>{lead.name}</Link>
           </li>
         ))}
       </ul>
