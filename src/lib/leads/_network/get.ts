@@ -1,5 +1,4 @@
-import {Lead} from "@/app/api/leads/_local/lead";
-import {NetworkReturn} from "@/app/lib/data_or_error";
+import {Lead} from "@/lib/leads/_local/lead";
 import {gql, useQuery} from "@apollo/client";
 import {graphqlClient} from "@/app/graphql/client";
 
@@ -16,12 +15,3 @@ export const useGraphqlLeadById = (leadId: string) => useQuery<{leadById: Lead}>
     }
   }
 `, {client: graphqlClient, variables: { leadId }});
-
-export const getNetworkLeadById = async (leadId: string): Promise<NetworkReturn<Lead>> => {
-  return fetch(`http://localhost:3000/api/leads/${leadId}`, {
-    method: 'GET',
-  }).then(async (r) => ({
-    success: r.status < 300,
-    json: await r.json(),
-  }))
-}

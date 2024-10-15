@@ -29,6 +29,12 @@ pnpm exec drizzle-kit migrate
    pnpm exec drizzle-kit migrate
    ```
 
+## Unit test
+
+```bash
+pnpm run test
+```
+
 ## Project Initialization
 
 ```bash

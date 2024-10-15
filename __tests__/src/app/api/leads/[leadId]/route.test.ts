@@ -1,18 +1,13 @@
 import {it, describe, expect, vi, beforeEach} from "vitest";
-import {GET} from "@/app/api/leads/[leadId]/route";
-import {NextRequest, NextResponse} from "next/server";
-import * as dbGet from "@/app/api/leads/_database/get";
+import * as dbGet from "@/lib/leads/_database/get";
+import {resolvers} from "@/app/graphql/resolver";
 
 describe("GET /leads/[leadId]", () => {
   describe("given a valid lead id", () => {
     describe("that does not exists", () => {
       it('should return 404', async () => {
-        const req = {} as NextRequest;
-        const params = {leadId: '123'}
-        const response = await GET(req, {params}) as NextResponse;
-        const result = await response.json()
-        expect(response.status).toEqual(404)
-        expect(result[0].message).toEqual("Lead with id (123) does not exists")
+        const params = {leadId: 123}
+        expect(() => resolvers.Query.leadById(null, params)).rejects.toThrowError("Lead with id (123) does not exists")
       });
     })
     describe("that exists", () => {
@@ -22,11 +17,8 @@ describe("GET /leads/[leadId]", () => {
         foo.mockReturnValue(Promise.resolve(lead))
       })
       it('should return results', async () => {
-        const req = {} as NextRequest;
-        const params = {leadId: '123'}
-        const response = await GET(req, {params}) as NextResponse;
-        const result = await response.json()
-        expect(response.status).toEqual(200)
+        const params = {leadId: 123}
+        const result = await resolvers.Query.leadById(null, params);
         expect(result).toMatchObject(lead)
       });
     })

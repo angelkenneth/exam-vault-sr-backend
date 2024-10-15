@@ -1,15 +1,15 @@
-import {PostLead} from "@/app/api/leads/_network/post";
-import {getDatabaseLeadList} from "@/app/api/leads/_database/list";
-import {postLeadSchema} from "@/app/api/leads/_validation/post";
-import {createDatabaseLead} from "@/app/api/leads/_database/create";
-import {leadByIdSchema} from "@/app/api/leads/_validation/get";
-import {NetworkLeadById} from "@/app/api/leads/_network/get";
-import {getDatabaseLeadById} from "@/app/api/leads/_database/get";
+import {PostLead} from "@/lib/leads/_network/post";
+import {getDatabaseLeadList} from "@/lib/leads/_database/list";
+import {postLeadSchema} from "@/lib/leads/_validation/post";
+import {createDatabaseLead} from "@/lib/leads/_database/create";
+import {leadByIdSchema} from "@/lib/leads/_validation/get";
+import {NetworkLeadById} from "@/lib/leads/_network/get";
+import {getDatabaseLeadById} from "@/lib/leads/_database/get";
 
 export const resolvers = {
   Query: {
     leads: () => getDatabaseLeadList(),
-    leadById: async (_: never, input: NetworkLeadById) => {
+    leadById: async (_: null, input: NetworkLeadById) => {
       const {error, data} = leadByIdSchema.safeParse(input);
       if (error) {
         throw error;
@@ -23,7 +23,7 @@ export const resolvers = {
     }
   },
   Mutation: {
-    createLead: (_: never, input: { input: PostLead }) => {
+    createLead: (_: null, input: { input: PostLead }) => {
       const {error, data} = postLeadSchema.safeParse(input.input);
       if (error) {
         throw error;
