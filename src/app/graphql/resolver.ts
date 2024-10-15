@@ -1,10 +1,10 @@
-import {PostLead} from "@/lib/leads/_network/post";
-import {getDatabaseLeadList} from "@/lib/leads/_database/list";
-import {postLeadSchema} from "@/lib/leads/_validation/post";
-import {createDatabaseLead} from "@/lib/leads/_database/create";
-import {leadByIdSchema} from "@/lib/leads/_validation/get";
-import {NetworkLeadById} from "@/lib/leads/_network/get";
-import {getDatabaseLeadById} from "@/lib/leads/_database/get";
+import {PostLead} from "@/lib/leads/network/post";
+import {getDatabaseLeadList} from "@/lib/leads/database/list";
+import {postLeadSchema} from "@/lib/leads/validation/post";
+import {createDatabaseLead} from "@/lib/leads/database/create";
+import {leadByIdSchema} from "@/lib/leads/validation/get";
+import {NetworkLeadById} from "@/lib/leads/network/get";
+import {getDatabaseLeadById} from "@/lib/leads/database/get";
 
 export const resolvers = {
   Query: {

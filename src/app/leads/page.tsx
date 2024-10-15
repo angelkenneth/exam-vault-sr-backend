@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link'
-import {useGraphqlLeadList} from "@/lib/leads/_network/list";
+import {useGraphqlLeadList} from "@/lib/leads/network/list";
 
 export default function ListLead() {
   const {loading, data} = useGraphqlLeadList()

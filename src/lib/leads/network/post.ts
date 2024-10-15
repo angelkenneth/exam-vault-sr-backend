@@ -1,4 +1,4 @@
-import {Lead} from "@/lib/leads/_local/lead";
+import {Lead} from "@/lib/leads/local/lead";
 import {gql, useMutation} from "@apollo/client";
 import {graphqlClient} from "@/app/graphql/client";
 

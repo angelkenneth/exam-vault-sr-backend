@@ -1,6 +1,6 @@
 import {db} from "@/db";
 import {leadsTable} from "@/db/schema";
-import {Lead} from "@/lib/leads/_local/lead";
+import {Lead} from "@/lib/leads/local/lead";
 import {eq} from "drizzle-orm";
 
 export const getDatabaseLeadById = (leadId: number): Promise<Lead> =>

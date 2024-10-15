@@ -1,5 +1,5 @@
 import {it, describe, expect, vi, beforeEach} from "vitest";
-import * as dbGet from "@/lib/leads/_database/get";
+import * as dbGet from "@/lib/leads/database/get";
 import {resolvers} from "@/app/graphql/resolver";
 
 describe("GET /leads/[leadId]", () => {

@@ -1,5 +1,5 @@
 "use client";
-import {useGraphqlLeadById} from "@/lib/leads/_network/get";
+import {useGraphqlLeadById} from "@/lib/leads/network/get";
 import Link from "next/link";
 
 export default function LeadId({params}: { params: { leadId: string } }) {

@@ -1,9 +1,9 @@
 "use client";
 import {useForm} from "react-hook-form";
 import {useRouter} from 'next/navigation'
-import {PostLead, useMutationCreateLead} from "@/lib/leads/_network/post";
+import {PostLead, useMutationCreateLead} from "@/lib/leads/network/post";
 import {useEffect} from "react";
-import {postLeadSchema} from "@/lib/leads/_validation/post";
+import {postLeadSchema} from "@/lib/leads/validation/post";
 import Link from "next/link";
 
 export default function CreateNewLead() {
