@@ -1,1 +1,0 @@
-ALTER TABLE `leads_table` RENAME COLUMN "age" TO "postcode";

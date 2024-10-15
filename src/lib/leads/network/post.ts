@@ -9,6 +9,8 @@ export const useMutationCreateLead = () => useMutation<{ createLead: Lead }>(gql
     createLead(input: $input) {
       id
       name
+      email
+      mobile
       postcode
     }
   }

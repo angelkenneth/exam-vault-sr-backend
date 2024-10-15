@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "23a0483b-abb9-4c2b-8dd6-7cd930cffdd2",
+  "id": "6f575d6c-1cb7-4bf5-948f-bd974c084e46",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "leads_table": {
@@ -17,6 +17,27 @@
         "name": {
           "name": "name",
           "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "mobile": {
+          "name": "mobile",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "postcode": {
+          "name": "postcode",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false

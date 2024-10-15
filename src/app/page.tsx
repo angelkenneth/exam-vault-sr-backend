@@ -35,6 +35,14 @@ export default function CreateNewLead() {
           <input type="text" {...register("name", {required: true})} />
         </div>
         <div>
+          <label>Email</label>
+          <input type="email" {...register("email", {required: true})} />
+        </div>
+        <div>
+          <label>Mobile</label>
+          <input type="tel" inputMode="tel" {...register("mobile", {required: true})} />
+        </div>
+        <div>
           <label>Postcode</label>
           <input type="text" {...register("postcode", {required: true})} />
         </div>

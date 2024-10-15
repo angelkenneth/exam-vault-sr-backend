@@ -11,6 +11,8 @@ export const useGraphqlLeadById = (leadId: string) => useQuery<{leadById: Lead}>
     leadById(leadId: $leadId) {
       id
       name
+      email
+      mobile
       postcode
     }
   }

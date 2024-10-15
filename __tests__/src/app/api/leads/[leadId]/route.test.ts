@@ -11,7 +11,13 @@ describe("GET /leads/[leadId]", () => {
       });
     })
     describe("that exists", () => {
-      const lead = {id: 123, name: 'Juan', postcode: 12}
+      const lead = {
+        id: 123,
+        name: 'Juan',
+        email: 'foo@bar.com',
+        mobile: '+639270000000',
+        postcode: 12,
+      }
       beforeEach(() => {
         const foo = vi.spyOn(dbGet, 'getDatabaseLeadById')
         foo.mockReturnValue(Promise.resolve(lead))
