@@ -31,20 +31,20 @@ export default function CreateNewLead() {
       <h1>Express your interest in Brighte's new product!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label>Name</label>
-          <input type="text" {...register("name", {required: true})} />
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" {...register("name", {required: true})} />
         </div>
         <div>
-          <label>Email</label>
-          <input type="email" {...register("email", {required: true})} />
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" {...register("email", {required: true})} />
         </div>
         <div>
-          <label>Mobile</label>
-          <input type="tel" inputMode="tel" {...register("mobile", {required: true})} />
+          <label htmlFor="mobile">Mobile</label>
+          <input id="mobile" type="tel" inputMode="tel" {...register("mobile", {required: true})} />
         </div>
         <div>
-          <label>Postcode</label>
-          <input type="text" {...register("postcode", {required: true})} />
+          <label htmlFor="postcode">Postcode</label>
+          <input id="postcode" type="text" {...register("postcode", {required: true})} />
         </div>
         {fieldErrorEl()}
         <div>
