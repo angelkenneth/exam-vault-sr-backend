@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-1. [pnpm](https://pnpm.io/installation)
+1. NodeJS 18
+2. [pnpm](https://pnpm.io/installation)
 
 ## Setup
 
