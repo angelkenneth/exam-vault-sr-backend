@@ -47,6 +47,10 @@ pnpm run test
 pnpm create next-app . --typescript --eslint --no-tailwind --src-dir --app --import-alias "@/*"
 ```
 
+## Demonstration
+
+![Brighte-Eats-Demo.gif](/Brighte-Eats-Demo.gif)
+
 ## References
 
 1. [How to install nextjs with pnpm](https://medium.com/frontendweb/how-to-install-nextjs-with-pnpm-a958f1b3e9ad)
