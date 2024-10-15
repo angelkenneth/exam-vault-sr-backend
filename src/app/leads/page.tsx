@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link'
 import {useGraphqlLeadList} from "@/lib/leads/network/list";
+import {serviceDisplayMap} from "@/lib/leads/local/services";
 
 export default function ListLead() {
   const {loading, data} = useGraphqlLeadList()
@@ -20,7 +21,7 @@ export default function ListLead() {
           if (leadList.length) {
             return leadList.map((lead) => (
               <li key={lead.id}>
-                <Link href={`/leads/${lead.id}`}>{lead.name}</Link>
+                <Link href={`/leads/${lead.id}`}>{lead.name} ({serviceDisplayMap[lead.service]})</Link>
               </li>
             ))
           } else {

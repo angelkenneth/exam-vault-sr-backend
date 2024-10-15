@@ -7,7 +7,10 @@ export const useGraphqlLeadList = () => useQuery<{leads: Lead[]}>(gql`
     leads {
       id
       name
-      name
+      email
+      mobile
+      postcode
+      service
     }
   }
 `, {client: graphqlClient});

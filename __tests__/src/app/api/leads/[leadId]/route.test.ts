@@ -1,6 +1,7 @@
 import {it, describe, expect, vi, beforeEach} from "vitest";
 import * as dbGet from "@/lib/leads/database/get";
 import {resolvers} from "@/app/graphql/resolver";
+import {BrighteService} from "@/lib/leads/local/services";
 
 describe("GET /leads/[leadId]", () => {
   describe("given a valid lead id", () => {
@@ -17,6 +18,7 @@ describe("GET /leads/[leadId]", () => {
         email: 'foo@bar.com',
         mobile: '+639270000000',
         postcode: 12,
+        service: BrighteService.delivery,
       }
       beforeEach(() => {
         const foo = vi.spyOn(dbGet, 'getDatabaseLeadById')

@@ -5,6 +5,7 @@ import {PostLead, useMutationCreateLead} from "@/lib/leads/network/post";
 import {useEffect} from "react";
 import {postLeadSchema} from "@/lib/leads/validation/post";
 import Link from "next/link";
+import {serviceDisplayMap, serviceList} from "@/lib/leads/local/services";
 
 export default function CreateNewLead() {
   const {register, handleSubmit} = useForm<PostLead>();
@@ -45,6 +46,14 @@ export default function CreateNewLead() {
         <div>
           <label htmlFor="postcode">Postcode</label>
           <input id="postcode" type="text" {...register("postcode", {required: true})} />
+        </div>
+        <div>
+          <label htmlFor="service">Service</label>
+          <select id="service" {...register("service", {required: true})}>
+            {serviceList.map(service => (
+              <option key={service} value={service}>{serviceDisplayMap[service]}</option>
+            ))}
+          </select>
         </div>
         {fieldErrorEl()}
         <div>

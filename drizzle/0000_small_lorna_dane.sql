@@ -3,5 +3,6 @@ CREATE TABLE `leads_table` (
 	`name` text NOT NULL,
 	`email` text NOT NULL,
 	`mobile` text NOT NULL,
-	`postcode` integer NOT NULL
+	`postcode` integer NOT NULL,
+	`service` text NOT NULL
 );

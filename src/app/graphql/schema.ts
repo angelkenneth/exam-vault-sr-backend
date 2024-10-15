@@ -6,12 +6,14 @@ type Lead {
   email: String!
   mobile: String!
   postcode: Int!
+  service: String!
 }
 input PostLead {
   name: String!
   email: String!
   mobile: String!
   postcode: Int!
+  service: String!
 }
 type Query {
   leads: [Lead]

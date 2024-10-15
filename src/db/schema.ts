@@ -6,4 +6,5 @@ export const leadsTable = sqliteTable("leads_table", {
   email: text().notNull(),
   mobile: text().notNull(),
   postcode: integer().notNull(),
+  service: text().notNull(),
 });

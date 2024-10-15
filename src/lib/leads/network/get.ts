@@ -14,6 +14,7 @@ export const useGraphqlLeadById = (leadId: string) => useQuery<{leadById: Lead}>
       email
       mobile
       postcode
+      service
     }
   }
 `, {client: graphqlClient, variables: { leadId }});

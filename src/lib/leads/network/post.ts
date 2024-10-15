@@ -12,6 +12,7 @@ export const useMutationCreateLead = () => useMutation<{ createLead: Lead }>(gql
       email
       mobile
       postcode
+      service
     }
   }
 `, {client: graphqlClient})
