@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "NextJS GraphQL | A K Tolentino",
+  title: "Brighte Eats | A K Tolentino",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
         <meta charSet="UTF-8"/>
         <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>ReactJS | A K Tolentino</title>
+        <title>Brighte Eats | A K Tolentino</title>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
