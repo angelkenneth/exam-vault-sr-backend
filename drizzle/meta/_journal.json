@@ -22,6 +22,13 @@
       "when": 1728883620514,
       "tag": "0002_bright_maximus",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1729004426812,
+      "tag": "0003_flimsy_wallow",
+      "breakpoints": true
     }
   ]
 }

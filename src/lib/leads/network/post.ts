@@ -9,7 +9,7 @@ export const useMutationCreateLead = () => useMutation<{ createLead: Lead }>(gql
     createLead(input: $input) {
       id
       name
-      age
+      postcode
     }
   }
 `, {client: graphqlClient})

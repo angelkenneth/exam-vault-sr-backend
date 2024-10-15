@@ -10,8 +10,8 @@ export const useGraphqlLeadById = (leadId: string) => useQuery<{leadById: Lead}>
   query Leads($leadId: ID!) {
     leadById(leadId: $leadId) {
       id
-      age
       name
+      postcode
     }
   }
 `, {client: graphqlClient, variables: { leadId }});

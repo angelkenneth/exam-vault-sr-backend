@@ -3,11 +3,11 @@ export const typeDefs = `#graphql
 type Lead {
   id: ID!
   name: String!
-  age: Int!
+  postcode: Int!
 }
 input PostLead {
   name: String!
-  age: Int!
+  postcode: Int!
 }
 type Query {
   leads: [Lead]

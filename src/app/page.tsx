@@ -35,8 +35,8 @@ export default function CreateNewLead() {
           <input type="text" {...register("name", {required: true})} />
         </div>
         <div>
-          <label>Age</label>
-          <input type="number" {...register("age", {required: true})} />
+          <label>Postcode</label>
+          <input type="text" {...register("postcode", {required: true})} />
         </div>
         {fieldErrorEl()}
         <div>
