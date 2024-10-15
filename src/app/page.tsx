@@ -28,7 +28,7 @@ export default function CreateNewLead() {
 
   return (
     <>
-      <h1>New Lead</h1>
+      <h1>Express your interest in Brighte's new product!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Name</label>
