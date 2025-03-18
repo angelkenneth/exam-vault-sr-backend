@@ -2,7 +2,7 @@ import {Lead} from "@/lib/leads/local/lead";
 import {useQuery} from '@tanstack/react-query';
 import {ListResponse} from "@/lib/shared/api";
 
-export const networkLeadList = (): Promise<Lead[]> => {
+export const leadListNetwork = (): Promise<Lead[]> => {
   const url = new URL('http://localhost:3000');
   url.pathname = '/api/leads';
   const request = new Request(url, {
@@ -15,8 +15,8 @@ export const networkLeadList = (): Promise<Lead[]> => {
     .then((r) => r.items);
 };
 
-export const useRestApiLeadList = () =>
+export const useLeadListRestQuery = () =>
   useQuery({
     queryKey: ['leads'],
-    queryFn: () => networkLeadList(),
+    queryFn: () => leadListNetwork(),
   });

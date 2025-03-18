@@ -1,24 +1,24 @@
 "use client";
 import Link from 'next/link'
-import {useGraphqlLeadList} from "@/lib/leads/network-graphql/list";
 import {serviceDisplayMap} from "@/lib/leads/local/services";
+import {useLeadListRestQuery} from "@/lib/leads/network-api/list";
 
 export default function ListLead() {
-  const {loading, data} = useGraphqlLeadList()
-  const leadList = data?.leads || []
+  const { isLoading, data } = useLeadListRestQuery()
+  const leadList = data || []
 
   return (
     <>
       <h1>
         <Link href="/">🏠</Link>
         &nbsp;&gt;
-        List of Leads (GraphQL)
+        List of Leads (REST)
       </h1>
       <p>
-        <Link href="/leads_graphql/new">Create</Link>
+        <Link href="/leads_rest/new">Create</Link>
       </p>
       {(() => {
-        if (loading) {
+        if (isLoading) {
           return <div>...</div>
         }
         if (leadList.length === 0) {
@@ -28,7 +28,7 @@ export default function ListLead() {
         return <ul>
           {leadList.map((lead) => (
             <li key={lead.id}>
-              <Link href={`/leads_graphql/${lead.id}`}>{lead.name} ({serviceDisplayMap[lead.service]})</Link>
+              <Link href={`/leads_rest/${lead.id}`}>{lead.name} ({serviceDisplayMap[lead.service]})</Link>
             </li>
           ))}
         </ul>

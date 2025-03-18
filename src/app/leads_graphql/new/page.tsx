@@ -11,10 +11,10 @@ export default function CreateNewLead() {
   const {register, handleSubmit} = useForm<PostLead>();
   const [createLead, {loading, data, error}] = useMutationCreateLead();
   const router = useRouter()
-  const onSubmit = async (input: PostLead) => {
+  const onSubmit = (input: PostLead) => {
     const {data} = postLeadSchema.safeParse(input);
     // TODO handle error
-    return createLead({variables: {input: data}}).then()
+    return createLead({variables: {input: data}});
   };
   useEffect(() => {
     if (data) {

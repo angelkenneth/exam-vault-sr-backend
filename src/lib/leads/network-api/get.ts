@@ -1,7 +1,7 @@
 import {Lead} from "@/lib/leads/local/lead";
 import {useQuery} from '@tanstack/react-query';
 
-export const networkLeadById = (leadId: string): Promise<Lead> => {
+export const leadByIdRestNetwork = (leadId: string): Promise<Lead> => {
   const url = new URL('http://localhost:3000');
   url.pathname = `/api/leads/${leadId}`;
   const request = new Request(url, {
@@ -13,8 +13,8 @@ export const networkLeadById = (leadId: string): Promise<Lead> => {
     .then((r) => r.json() as Promise<Lead>)
 };
 
-export const useRestApiLeadById = (leadId: string) =>
+export const useLeadByIdRestQuery = (leadId: string) =>
   useQuery({
-    queryKey: ['leads'],
-    queryFn: () => networkLeadById(leadId),
+    queryKey: ['leads', leadId],
+    queryFn: () => leadByIdRestNetwork(leadId),
   });
