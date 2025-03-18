@@ -1,10 +1,10 @@
 "use client";
-import {useGraphqlLeadById} from "@/lib/leads/network-graphql/get";
+import {useLeadByIdGraphqlQuery} from "@/lib/leads/network-graphql/get";
 import Link from "next/link";
 
 export default function LeadId({params}: { params: { leadId: string } }) {
   const leadId = params.leadId as string;
-  const {loading, data} = useGraphqlLeadById(leadId);
+  const {loading, data} = useLeadByIdGraphqlQuery(leadId);
   const lead = data?.leadById;
 
   if (loading) {

@@ -1,7 +1,7 @@
 import {z} from "zod";
 import {BrighteService} from "@/lib/leads/local/services";
 
-export const postLeadSchema = z.object({
+export const createLeadSchema = z.object({
   name: z.string(),
   email: z.string().email(),
   mobile: z.string(),

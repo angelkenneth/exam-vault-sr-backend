@@ -1,6 +1,6 @@
-import {PostLead} from "@/lib/leads/network-graphql/post";
+import {PostLead} from "@/lib/leads/network-graphql/create";
 import {getDatabaseLeadList} from "@/lib/leads/database/list";
-import {postLeadSchema} from "@/lib/leads/validation/post";
+import {createLeadSchema} from "@/lib/leads/validation/create";
 import {createDatabaseLead} from "@/lib/leads/database/create";
 import {leadByIdSchema} from "@/lib/leads/validation/get";
 import {NetworkLeadById} from "@/lib/leads/network-graphql/get";
@@ -24,7 +24,7 @@ export const resolvers = {
   },
   Mutation: {
     createLead: (_: null, input: { input: PostLead }) => {
-      const {error, data} = postLeadSchema.safeParse(input.input);
+      const {error, data} = createLeadSchema.safeParse(input.input);
       if (error) {
         throw error;
       }

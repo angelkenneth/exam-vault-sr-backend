@@ -3,10 +3,10 @@ import {useMutation} from '@tanstack/react-query';
 import {reactQueryClient} from "@/app/lib/tanstack-client";
 import {NetworkReturn} from "@/lib/shared/data_or_error";
 
-export type PostLead = Omit<Lead, 'id'>;
+export type CreateLeadInput = Omit<Lead, 'id'>;
 
 export const createLeadNetwork = async (
-  body: PostLead
+  body: CreateLeadInput
 ): Promise<NetworkReturn<Lead>> =>
   fetch(`http://localhost:3000/api/leads`, {
     method: 'POST',
@@ -19,9 +19,9 @@ export const createLeadNetwork = async (
     json: await r.json(),
   }));
 
-export const useCreateLeadMutation = () =>
+export const useCreateLeadRestMutation = () =>
   useMutation({
-    mutationFn: (input: PostLead) => createLeadNetwork(input),
+    mutationFn: (input: CreateLeadInput) => createLeadNetwork(input),
     onMutate: async () => {
       await reactQueryClient.cancelQueries({queryKey: ['leads']});
     },

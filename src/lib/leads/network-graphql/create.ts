@@ -4,7 +4,7 @@ import {graphqlClient} from "@/app/graphql/client";
 
 export type PostLead = Omit<Lead, 'id'>;
 
-export const useMutationCreateLead = () => useMutation<{ createLead: Lead }>(gql`
+export const useCreateLeadMutation = () => useMutation<{ createLead: Lead }>(gql`
   mutation Mutation($input: PostLead!) {
     createLead(input: $input) {
       id

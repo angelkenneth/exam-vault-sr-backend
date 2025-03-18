@@ -1,18 +1,18 @@
 "use client";
 import {useForm} from "react-hook-form";
 import {useRouter} from 'next/navigation'
-import {PostLead, useMutationCreateLead} from "@/lib/leads/network-graphql/post";
+import {PostLead, useCreateLeadMutation} from "@/lib/leads/network-graphql/create";
 import {useEffect} from "react";
-import {postLeadSchema} from "@/lib/leads/validation/post";
+import {createLeadSchema} from "@/lib/leads/validation/create";
 import Link from "next/link";
 import {serviceDisplayMap, serviceList} from "@/lib/leads/local/services";
 
 export default function CreateNewLead() {
   const {register, handleSubmit} = useForm<PostLead>();
-  const [createLead, {loading, data, error}] = useMutationCreateLead();
+  const [createLead, {loading, data, error}] = useCreateLeadMutation();
   const router = useRouter()
   const onSubmit = (input: PostLead) => {
-    const {data} = postLeadSchema.safeParse(input);
+    const {data} = createLeadSchema.safeParse(input);
     // TODO handle error
     return createLead({variables: {input: data}});
   };

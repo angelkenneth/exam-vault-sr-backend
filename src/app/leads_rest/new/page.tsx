@@ -1,21 +1,21 @@
 "use client";
 import {useForm} from "react-hook-form";
 import {useRouter} from 'next/navigation'
-import {PostLead} from "@/lib/leads/network-graphql/post";
+import {PostLead} from "@/lib/leads/network-graphql/create";
 import {useCallback, useState} from "react";
-import {postLeadSchema} from "@/lib/leads/validation/post";
+import {createLeadSchema} from "@/lib/leads/validation/create";
 import Link from "next/link";
 import {serviceDisplayMap, serviceList} from "@/lib/leads/local/services";
-import {useCreateLeadMutation} from "@/lib/leads/network-api/post";
+import {useCreateLeadRestMutation} from "@/lib/leads/network-api/create";
 import {ZodIssue} from "zod";
 
 export default function CreateNewLead() {
   const {register, handleSubmit} = useForm<PostLead>();
-  const {mutate, isPending} = useCreateLeadMutation();
+  const {mutate, isPending} = useCreateLeadRestMutation();
   const router = useRouter()
   const doMutate = useCallback(
     (input: PostLead) => {
-      const {error, data} = postLeadSchema.safeParse(input);
+      const {error, data} = createLeadSchema.safeParse(input);
       if (error) {
         setError(error.issues);
         return error

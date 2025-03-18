@@ -3,7 +3,7 @@ import {AppRouteHandlerFn} from "next/dist/server/future/route-modules/app-route
 import {createDatabaseLead} from "@/lib/leads/database/create";
 import {getDatabaseLeadList} from "@/lib/leads/database/list";
 import {Lead} from "@/lib/leads/local/lead";
-import {postLeadSchema} from "@/lib/leads/validation/post";
+import {createLeadSchema} from "@/lib/leads/validation/create";
 import {ListResponse} from "@/lib/shared/api";
 
 export const GET: AppRouteHandlerFn = async () => {
@@ -14,7 +14,7 @@ export const GET: AppRouteHandlerFn = async () => {
 
 export const POST: AppRouteHandlerFn = async (req) => {
   const input = await req.json();
-  const {error, data} = postLeadSchema.safeParse(input);
+  const {error, data} = createLeadSchema.safeParse(input);
   if (error) {
     return NextResponse.json(error.errors, {status: 400})
   }

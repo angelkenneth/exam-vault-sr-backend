@@ -1,10 +1,10 @@
 "use client";
 import Link from 'next/link'
-import {useGraphqlLeadList} from "@/lib/leads/network-graphql/list";
+import {useLeadListGraphqlQuery} from "@/lib/leads/network-graphql/list";
 import {serviceDisplayMap} from "@/lib/leads/local/services";
 
 export default function ListLead() {
-  const {loading, data} = useGraphqlLeadList()
+  const {loading, data} = useLeadListGraphqlQuery()
   const leadList = data?.leads || []
 
   return (

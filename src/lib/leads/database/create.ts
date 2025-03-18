@@ -1,6 +1,6 @@
 import {db} from "@/db";
 import {leadsTable} from "@/db/schema";
-import {PostLead} from "@/lib/leads/network-graphql/post";
+import {PostLead} from "@/lib/leads/network-graphql/create";
 import {Lead} from "@/lib/leads/local/lead";
 
 export const createDatabaseLead = (body: PostLead): Promise<Lead> =>

@@ -6,7 +6,7 @@ export interface NetworkLeadById {
   leadId: number;
 }
 
-export const useGraphqlLeadById = (leadId: string) => useQuery<{leadById: Lead}>(gql`
+export const useLeadByIdGraphqlQuery = (leadId: string) => useQuery<{leadById: Lead}>(gql`
   query Leads($leadId: ID!) {
     leadById(leadId: $leadId) {
       id
