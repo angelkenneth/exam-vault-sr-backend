@@ -17,6 +17,9 @@ dependencies:
   '@libsql/client':
     specifier: ^0.14.0
     version: 0.14.0
+  '@tanstack/react-query':
+    specifier: ^5.56.2
+    version: 5.56.2(react@18.3.1)
   drizzle-orm:
     specifier: ^0.34.1
     version: 0.34.1(@libsql/client@0.14.0)(@types/react@18.3.11)(react@18.3.1)
@@ -1481,6 +1484,19 @@ packages:
     dependencies:
       '@swc/counter': 0.1.3
       tslib: 2.7.0
+    dev: false
+
+  /@tanstack/query-core@5.56.2:
+    resolution: {integrity: sha512-gor0RI3/R5rVV3gXfddh1MM+hgl0Z4G7tj6Xxpq6p2I03NGPaJ8dITY9Gz05zYYb/EJq9vPas/T4wn9EaDPd4Q==}
+    dev: false
+
+  /@tanstack/react-query@5.56.2(react@18.3.1):
+    resolution: {integrity: sha512-SR0GzHVo6yzhN72pnRhkEFRAHMsUo5ZPzAxfTMvUxFIDVS6W9LYUp6nXW3fcHVdg0ZJl8opSH85jqahvm6DSVg==}
+    peerDependencies:
+      react: ^18 || ^19
+    dependencies:
+      '@tanstack/query-core': 5.56.2
+      react: 18.3.1
     dev: false
 
   /@testing-library/dom@10.4.0:

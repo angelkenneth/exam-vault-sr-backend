@@ -1,9 +1,9 @@
-import {PostLead} from "@/lib/leads/network/post";
+import {PostLead} from "@/lib/leads/network-graphql/post";
 import {getDatabaseLeadList} from "@/lib/leads/database/list";
 import {postLeadSchema} from "@/lib/leads/validation/post";
 import {createDatabaseLead} from "@/lib/leads/database/create";
 import {leadByIdSchema} from "@/lib/leads/validation/get";
-import {NetworkLeadById} from "@/lib/leads/network/get";
+import {NetworkLeadById} from "@/lib/leads/network-graphql/get";
 import {getDatabaseLeadById} from "@/lib/leads/database/get";
 
 export const resolvers = {

@@ -5,14 +5,15 @@
 1. NodeJS 18
 2. [pnpm](https://pnpm.io/installation)
 
-## Setup
-
 ### TLDR
 
 ```bash
 pnpm install && \
-pnpm exec drizzle-kit migrate
+pnpm exec drizzle-kit migrate && \
+pnpm run dev
 ```
+
+## Setup
 
 ### Steps
 
