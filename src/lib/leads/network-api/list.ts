@@ -1,6 +1,6 @@
-import {Lead} from "@/lib/leads/local/lead";
-import {useQuery} from '@tanstack/react-query';
-import {ListResponse} from "@/lib/shared/api";
+import { Lead } from '@/lib/leads/local/lead';
+import { useQuery } from '@tanstack/react-query';
+import { ListResponse } from '@/lib/shared/api';
 
 export const leadListNetwork = (): Promise<Lead[]> => {
   const url = new URL('http://localhost:3000');

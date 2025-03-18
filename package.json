@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run"
+    "lint-fix": "next lint --fix",
+    "format": "prettier --check .",
+    "format-fix": "prettier --check . || (prettier --write . && exit 1)",
+    "test": "vitest run",
+    "test-watch": "vitest watch"
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
@@ -32,7 +36,9 @@
     "drizzle-kit": "^0.25.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
+    "eslint-config-prettier": "^9.1.0",
     "jsdom": "^25.0.1",
+    "prettier": "^3.3.3",
     "typescript": "^5",
     "vite-tsconfig-paths": "<5",
     "vitest": "^2.1.2"

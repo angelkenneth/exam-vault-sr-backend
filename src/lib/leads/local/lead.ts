@@ -1,4 +1,4 @@
-import {type BrighteService} from "@/lib/leads/local/services";
+import { type BrighteService } from '@/lib/leads/local/services';
 
 export interface Lead {
   id: number;

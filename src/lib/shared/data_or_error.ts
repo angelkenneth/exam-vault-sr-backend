@@ -1,4 +1,4 @@
-import type {ZodIssue} from "zod";
+import type { ZodIssue } from 'zod';
 
 export type NetworkSuccess<Output> = {
   success: true;

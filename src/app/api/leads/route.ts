@@ -1,23 +1,23 @@
-import {NextResponse} from "next/server";
-import {AppRouteHandlerFn} from "next/dist/server/future/route-modules/app-route/module";
-import {createDatabaseLead} from "@/lib/leads/database/create";
-import {getDatabaseLeadList} from "@/lib/leads/database/list";
-import {Lead} from "@/lib/leads/local/lead";
-import {createLeadSchema} from "@/lib/leads/validation/create";
-import {ListResponse} from "@/lib/shared/api";
+import { NextResponse } from 'next/server';
+import { AppRouteHandlerFn } from 'next/dist/server/future/route-modules/app-route/module';
+import { createDatabaseLead } from '@/lib/leads/database/create';
+import { getDatabaseLeadList } from '@/lib/leads/database/list';
+import { Lead } from '@/lib/leads/local/lead';
+import { createLeadSchema } from '@/lib/leads/validation/create';
+import { ListResponse } from '@/lib/shared/api';
 
 export const GET: AppRouteHandlerFn = async () => {
-  const result = await getDatabaseLeadList()
-  const response: ListResponse<Lead> = {items: result}
-  return NextResponse.json(response)
-}
+  const result = await getDatabaseLeadList();
+  const response: ListResponse<Lead> = { items: result };
+  return NextResponse.json(response);
+};
 
 export const POST: AppRouteHandlerFn = async (req) => {
   const input = await req.json();
-  const {error, data} = createLeadSchema.safeParse(input);
+  const { error, data } = createLeadSchema.safeParse(input);
   if (error) {
-    return NextResponse.json(error.errors, {status: 400})
+    return NextResponse.json(error.errors, { status: 400 });
   }
-  const result = await createDatabaseLead(data)
-  return NextResponse.json(result, {status: 201})
-}
+  const result = await createDatabaseLead(data);
+  return NextResponse.json(result, { status: 201 });
+};

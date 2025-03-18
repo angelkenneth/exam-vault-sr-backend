@@ -1,7 +1,7 @@
-import {Lead} from "@/lib/leads/local/lead";
-import {useMutation} from '@tanstack/react-query';
-import {reactQueryClient} from "@/app/lib/tanstack-client";
-import {NetworkReturn} from "@/lib/shared/data_or_error";
+import { Lead } from '@/lib/leads/local/lead';
+import { useMutation } from '@tanstack/react-query';
+import { reactQueryClient } from '@/app/lib/tanstack-client';
+import { NetworkReturn } from '@/lib/shared/data_or_error';
 
 export type CreateLeadInput = Omit<Lead, 'id'>;
 
@@ -23,9 +23,9 @@ export const useCreateLeadRestMutation = () =>
   useMutation({
     mutationFn: (input: CreateLeadInput) => createLeadNetwork(input),
     onMutate: async () => {
-      await reactQueryClient.cancelQueries({queryKey: ['leads']});
+      await reactQueryClient.cancelQueries({ queryKey: ['leads'] });
     },
     onSuccess: async () => {
-      await reactQueryClient.invalidateQueries({queryKey: ['leads']});
+      await reactQueryClient.invalidateQueries({ queryKey: ['leads'] });
     },
   });
