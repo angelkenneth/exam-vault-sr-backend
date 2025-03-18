@@ -13,6 +13,7 @@ import { serviceDisplayMap, serviceList } from '@/lib/leads/local/services';
 export default function CreateNewLead() {
   const { register, handleSubmit } = useForm<PostLead>();
   const [createLead, { loading, data, error }] = useCreateLeadMutation();
+  const disabled = loading;
   const router = useRouter();
   const onSubmit = (input: PostLead) => {
     const { data } = createLeadSchema.safeParse(input);
@@ -39,7 +40,7 @@ export default function CreateNewLead() {
           <input
             id='name'
             type='text'
-            {...register('name', { required: true })}
+            {...register('name', { required: true, disabled })}
           />
         </div>
         <div>
@@ -47,7 +48,7 @@ export default function CreateNewLead() {
           <input
             id='email'
             type='email'
-            {...register('email', { required: true })}
+            {...register('email', { required: true, disabled })}
           />
         </div>
         <div>
@@ -56,7 +57,7 @@ export default function CreateNewLead() {
             id='mobile'
             type='tel'
             inputMode='tel'
-            {...register('mobile', { required: true })}
+            {...register('mobile', { required: true, disabled })}
           />
         </div>
         <div>
@@ -64,7 +65,7 @@ export default function CreateNewLead() {
           <input
             id='postcode'
             type='text'
-            {...register('postcode', { required: true })}
+            {...register('postcode', { required: true, disabled })}
           />
         </div>
         <div>
